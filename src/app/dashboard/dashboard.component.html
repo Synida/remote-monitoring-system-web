@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <p>Real-time</p>
+      <div class="row" *ngFor="let chart of charts; let i = index">
+        <label>{{ chart.name }}({{ chart.unit }})</label>
+        <canvas id="chart{{ chart.id }}" style="width:100%; height:200px" width="600" height="200"
+                refresh (init) = "initializeGraph(i)"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
